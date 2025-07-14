@@ -59,14 +59,21 @@ public class TelaRegistrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(43, 67, 74));
+
         jLabel2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome");
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Telefone");
 
+        jButton1.setBackground(new java.awt.Color(38, 130, 158));
         jButton1.setFont(new java.awt.Font("Caladea", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Registrar");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -74,59 +81,102 @@ public class TelaRegistrar extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email");
 
+        jTextField2.setBackground(new java.awt.Color(38, 130, 158));
         jTextField2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel4.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cpf");
 
         jLabel5.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Senha");
 
+        jTextField5.setBackground(new java.awt.Color(38, 130, 158));
         jTextField5.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel6.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Rua");
 
+        jTextField6.setBackground(new java.awt.Color(38, 130, 158));
         jTextField6.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel7.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Número");
 
         jLabel8.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Bairro");
 
+        jTextField7.setBackground(new java.awt.Color(38, 130, 158));
         jTextField7.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel9.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Complemento");
 
+        jTextField8.setBackground(new java.awt.Color(38, 130, 158));
         jTextField8.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel10.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Cidade");
 
+        jTextField9.setBackground(new java.awt.Color(38, 130, 158));
         jTextField9.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
+        jTextField10.setBackground(new java.awt.Color(38, 130, 158));
         jTextField10.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel11.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Estado");
 
+        jFormattedTextField2.setBackground(new java.awt.Color(38, 130, 158));
+        jFormattedTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jFormattedTextField2.setForeground(new java.awt.Color(255, 255, 255));
         try {
             jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
+        jPasswordField1.setBackground(new java.awt.Color(38, 130, 158));
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jFormattedTextField3.setBackground(new java.awt.Color(38, 130, 158));
+        jFormattedTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jFormattedTextField3.setForeground(new java.awt.Color(255, 255, 255));
         try {
             jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
+        jTextField3.setBackground(new java.awt.Color(38, 130, 158));
         jTextField3.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,7 +232,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
                                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(365, 365, 365)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

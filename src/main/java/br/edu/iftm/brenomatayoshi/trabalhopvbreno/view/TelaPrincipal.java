@@ -55,6 +55,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         adicionar = new javax.swing.JMenuItem();
         remover = new javax.swing.JMenuItem();
         excluir = new javax.swing.JMenuItem();
+        editar = new javax.swing.JMenuItem();
         jSplitPane1 = new javax.swing.JSplitPane();
         menu = new javax.swing.JPanel();
         jButton11 = new javax.swing.JButton();
@@ -110,9 +111,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        listarFornecedor = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        listarCategoria = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        listarMovimentacao = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         adicionarRemover = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
@@ -166,6 +173,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPopupMenu1.add(excluir);
+
+        editar.setText("Editar");
+        editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(editar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -786,44 +801,172 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         cards.add(cadastrarFornecedor, "cadastrarFornecedor");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 881, Short.MAX_VALUE)
+        jTable5.setAutoCreateRowSorter(true);
+        jTable5.setBackground(new java.awt.Color(43, 67, 74));
+        jTable5.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTable5.setForeground(new java.awt.Color(255, 255, 255));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nome", "CNPJ", "Telefone", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable5.setToolTipText("");
+        jTable5.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable5.setSelectionBackground(new java.awt.Color(114, 132, 138));
+        jTable5.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable5.setShowGrid(true);
+        jTable5.getTableHeader().setResizingAllowed(false);
+        jTable5.getTableHeader().setReorderingAllowed(false);
+        jTable5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable5MouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(jTable5);
+        jTable5.setFillsViewportHeight(true); // preenche toda a área visível
+
+        javax.swing.GroupLayout listarFornecedorLayout = new javax.swing.GroupLayout(listarFornecedor);
+        listarFornecedor.setLayout(listarFornecedorLayout);
+        listarFornecedorLayout.setHorizontalGroup(
+            listarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        listarFornecedorLayout.setVerticalGroup(
+            listarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
 
-        cards.add(jPanel6, "card4");
+        cards.add(listarFornecedor, "listarFornecedor");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jTable4.setAutoCreateRowSorter(true);
+        jTable4.setBackground(new java.awt.Color(43, 67, 74));
+        jTable4.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTable4.setForeground(new java.awt.Color(255, 255, 255));
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nome", "Descrição"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable4.setToolTipText("");
+        jTable4.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable4.setSelectionBackground(new java.awt.Color(114, 132, 138));
+        jTable4.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable4.setShowGrid(true);
+        jTable4.getTableHeader().setResizingAllowed(false);
+        jTable4.getTableHeader().setReorderingAllowed(false);
+        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable4MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(jTable4);
+        jTable4.setFillsViewportHeight(true); // preenche toda a área visível
+
+        javax.swing.GroupLayout listarCategoriaLayout = new javax.swing.GroupLayout(listarCategoria);
+        listarCategoria.setLayout(listarCategoriaLayout);
+        listarCategoriaLayout.setHorizontalGroup(
+            listarCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        listarCategoriaLayout.setVerticalGroup(
+            listarCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
 
-        cards.add(jPanel4, "card4");
+        cards.add(listarCategoria, "listarCategorias");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 881, Short.MAX_VALUE)
+        listarMovimentacao.setBackground(new java.awt.Color(42, 66, 73));
+
+        jTable3.setAutoCreateRowSorter(true);
+        jTable3.setBackground(new java.awt.Color(43, 67, 74));
+        jTable3.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(255, 255, 255));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Usuario", "Quantidade", "Tipo", "Fornecedor/Recebedor", "Data"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable3.setToolTipText("");
+        jTable3.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable3.setSelectionBackground(new java.awt.Color(114, 132, 138));
+        jTable3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable3.setShowGrid(true);
+        jTable3.getTableHeader().setResizingAllowed(false);
+        jTable3.getTableHeader().setReorderingAllowed(false);
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable3MouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(jTable3);
+        jTable3.setFillsViewportHeight(true); // preenche toda a área visível
+
+        javax.swing.GroupLayout listarMovimentacaoLayout = new javax.swing.GroupLayout(listarMovimentacao);
+        listarMovimentacao.setLayout(listarMovimentacaoLayout);
+        listarMovimentacaoLayout.setHorizontalGroup(
+            listarMovimentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        listarMovimentacaoLayout.setVerticalGroup(
+            listarMovimentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
 
-        cards.add(jPanel3, "card4");
+        cards.add(listarMovimentacao, "listarMovimentacao");
 
         adicionarRemover.setBackground(new java.awt.Color(42, 66, 73));
 
@@ -1113,7 +1256,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setToolTipText("Double click para mais opções");
+        jTable2.setToolTipText("Botão direito para mais opções");
         jTable2.setGridColor(new java.awt.Color(255, 255, 255));
         jTable2.setSelectionBackground(new java.awt.Color(114, 132, 138));
         jTable2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -1174,6 +1317,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        preencherListarMovimentacao();
+        cardLayout.show(cards, "listarMovimentacao");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1185,7 +1330,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         cardLayout.show(cards, "cadastrarProduto");
-        preencherCategoria();
+        preencherCategoria(jComboBox1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -1205,6 +1350,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
+        preencherTabelaFornecedor();
+        cardLayout.show(cards, "listarFornecedor");
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
@@ -1214,6 +1361,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(cards, "listarCategorias");
+        preencherTabelaCategoria();
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -1294,8 +1443,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     if (produtoController.alterarProduto(produto)) {
                         Movimentacao movimentacao = new Movimentacao(user, quantidadeAdicionarRemover, LocalDate.now(), "ENTRADA", produto, fornecedor);
                         if (movimentacaoController.cadastrarMovimentacao(movimentacao)) {
+                            JOptionPane.showMessageDialog(this, "Sucesso ao adicionar " + quantidadeAdicionarRemover + " produto");
+                            return;
                         }
                     }
+                    JOptionPane.showMessageDialog(this, "Falha ao adicionar " + quantidadeAdicionarRemover + " produto");
                     break;
 
                 case "Remover":
@@ -1305,11 +1457,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     if (produtoController.alterarProduto(produto)) {
                         Movimentacao movimentacao = new Movimentacao(user, quantidadeAdicionarRemover, LocalDate.now(), "SAIDA", produto, fornecedor);
                         if (movimentacaoController.cadastrarMovimentacao(movimentacao)) {
+                            JOptionPane.showMessageDialog(this, "Sucesso ao remover " + quantidadeAdicionarRemover + " produto");
+                            return;
                         }
                     }
+                    JOptionPane.showMessageDialog(this, "Remover ao remover " + quantidadeAdicionarRemover + " produto");
                     break;
                 default:
             }
+        }
+        if (jPanel2.isVisible()) {
+            Produto produto = new Produto(categoria, nome, descricao, quantidade, data, true);
+            produto.setIdProduto(id);
+            if (produtoController.alterarProduto(produto)) {
+                JOptionPane.showMessageDialog(this, "Sucesso ao editar produto");
+                return;
+            }
+            JOptionPane.showMessageDialog(this, "Falha ao editar produto");
         }
     }//GEN-LAST:event_jButton30ActionPerformed
 
@@ -1338,8 +1502,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel1.setVisible(true);
             jPanel2.setVisible(false);
             preencherAdicionarRemover(produto);
+            preencherFornecedor(jComboBox3);
             jLabel23.setText("Remover");
             jLabel4.setText("Recebedor");
+            jTextField15.setEditable(false);
+            jTextField12.setEditable(false);
+            jTextField13.setEditable(false);
+            jTextArea2.setEditable(false);
             cardLayout.show(cards, "adicionarRemover");
         }
     }//GEN-LAST:event_removerActionPerformed
@@ -1360,9 +1529,40 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jLabel23.setText("Adicionar");
             jLabel4.setText("Fornecedor");
             preencherFornecedor(jComboBox3);
+            jTextField15.setEditable(false);
+            jTextField12.setEditable(false);
+            jTextField13.setEditable(false);
+            jTextArea2.setEditable(false);
             cardLayout.show(cards, "adicionarRemover");
         }
     }//GEN-LAST:event_adicionarActionPerformed
+
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+        // TODO add your handling code here:
+        int linha = jTable2.getSelectedRow();
+        if (linha != -1) {
+            Produto produto = produtoController.buscarProdutoPorId((int) jTable2.getValueAt(linha, 0));
+            jPanel1.setVisible(false);
+            jPanel2.setVisible(true);
+            preencherAdicionarRemover(produto);
+            preencherCategoria(jComboBox4);
+            jTextField12.setEditable(true);
+            jTextArea2.setEditable(true);
+            cardLayout.show(cards, "adicionarRemover");
+        }
+    }//GEN-LAST:event_editarActionPerformed
+
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable3MouseClicked
+
+    private void jTable4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable4MouseClicked
+
+    private void jTable5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable5MouseClicked
 
     private void menuVisivel(JPanel painel) {
         boolean visivel = painel.isVisible();
@@ -1372,11 +1572,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         painel.setVisible(!visivel);
     }
 
-    public void preencherCategoria() {
+    public void preencherCategoria(JComboBox cb) {
         List<Categoria> categorias = categoriaController.categorias();
-        jComboBox1.removeAllItems();
+        cb.removeAllItems();
         for (Categoria categoria : categorias) {
-            jComboBox1.addItem(categoria);
+            cb.addItem(categoria);
         }
     }
 
@@ -1409,6 +1609,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }
 
+    public void preencherListarMovimentacao() {
+        List<Movimentacao> movimentacoes = movimentacaoController.movimentacoes();
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.setRowCount(0);
+        for (Movimentacao movimentacao : movimentacoes) {
+            Object[] novaLinha = {movimentacao.getIdMovimentacao(), movimentacao.getUsuario().getNome(), movimentacao.getQuantidadeMovimentado(), movimentacao.getTipo(), movimentacao.getFornecedor().getNome(), movimentacao.getData()};
+            model.addRow(novaLinha);
+        }
+    }
+
+    public void preencherTabelaCategoria() {
+        List<Categoria> categorias = categoriaController.categorias();
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        model.setRowCount(0);
+        for (Categoria categoria : categorias) {
+            Object[] novaLinha = {categoria.getIdCategoria(), categoria.getNome(), categoria.getDescricao()};
+            model.addRow(novaLinha);
+        }
+    }
+
+    public void preencherTabelaFornecedor() {
+        List<Fornecedor> fornecedores = fornecedorController.fornecedores();
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        model.setRowCount(0);
+        for (Fornecedor fornecedor : fornecedores) {
+            Object[] novaLinha = {fornecedor.getIdFornecedor(), fornecedor.getNome(), fornecedor.getCnpj(), fornecedor.getTelefone(), fornecedor.getEmail()};
+            model.addRow(novaLinha);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem adicionar;
     private javax.swing.JPanel adicionarRemover;
@@ -1416,6 +1646,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel cadastrarFornecedor;
     private javax.swing.JPanel cadastrarProduto;
     private javax.swing.JPanel cards;
+    private javax.swing.JMenuItem editar;
     private javax.swing.JMenuItem excluir;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1435,7 +1666,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<Categoria> jComboBox1;
+    public javax.swing.JComboBox<Categoria> jComboBox1;
     private javax.swing.JComboBox<Fornecedor> jComboBox3;
     private javax.swing.JComboBox<Categoria> jComboBox4;
     private javax.swing.JFormattedTextField jFormattedTextField1;
@@ -1468,16 +1699,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
@@ -1496,6 +1730,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel listarCategoria;
+    private javax.swing.JPanel listarFornecedor;
+    private javax.swing.JPanel listarMovimentacao;
     private javax.swing.JPanel listarProduto;
     private javax.swing.JPanel menu;
     private javax.swing.JMenuItem remover;

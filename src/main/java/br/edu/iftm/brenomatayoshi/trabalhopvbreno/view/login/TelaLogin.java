@@ -45,42 +45,59 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(43, 67, 74));
+
+        jPasswordField1.setBackground(new java.awt.Color(38, 130, 158));
         jPasswordField1.setFont(new java.awt.Font("Caladea", 0, 14)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Senha");
 
         jLabel2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Login");
 
-        jButton1.setFont(new java.awt.Font("Caladea", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(38, 130, 158));
+        jButton1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Entrar");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Caladea", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Cantarell", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Não tem um cadastro? Clique aqui");
 
-        jButton2.setFont(new java.awt.Font("Caladea", 0, 12)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(38, 130, 158));
+        jButton2.setFont(new java.awt.Font("Cantarell", 0, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cadastrar");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jTextField1.setBackground(new java.awt.Color(38, 130, 158));
         jTextField1.setFont(new java.awt.Font("Caladea", 0, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setToolTipText("CPF ou email");
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
+                .addContainerGap(134, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -150,7 +167,7 @@ public class TelaLogin extends javax.swing.JFrame {
         if (user != null) {
             JOptionPane.showMessageDialog(this, "Login bem sucedido");
             TelaPrincipal telaPrincipal = new TelaPrincipal(user);
-            telaPrincipal.preencherCategoria();
+            telaPrincipal.preencherCategoria(telaPrincipal.jComboBox1);
 //            telaPrincipal.preencherFornecedor();
             telaPrincipal.setVisible(true);
             this.dispose();

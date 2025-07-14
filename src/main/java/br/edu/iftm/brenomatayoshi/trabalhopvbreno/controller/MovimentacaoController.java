@@ -6,6 +6,7 @@ package br.edu.iftm.brenomatayoshi.trabalhopvbreno.controller;
 
 import br.edu.iftm.brenomatayoshi.trabalhopvbreno.dao.MovimentacaoDao;
 import br.edu.iftm.brenomatayoshi.trabalhopvbreno.model.Movimentacao;
+import java.util.List;
 
 /**
  *
@@ -20,5 +21,9 @@ public class MovimentacaoController {
     
     public boolean excluirFornecedorHasProduto(int id) {
         return movimentacaoDao.excluirFornecedorHasProduto(id);
+    }
+    
+    public List<Movimentacao> movimentacoes() {
+        return movimentacaoDao.movimentacoes();
     }
 }
