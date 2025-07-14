@@ -56,6 +56,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         remover = new javax.swing.JMenuItem();
         excluir = new javax.swing.JMenuItem();
         editar = new javax.swing.JMenuItem();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        editarFornecedor = new javax.swing.JMenuItem();
+        detalhes = new javax.swing.JMenuItem();
         jSplitPane1 = new javax.swing.JSplitPane();
         menu = new javax.swing.JPanel();
         jButton11 = new javax.swing.JButton();
@@ -147,6 +150,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         listarProduto = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        editarFornecedorP = new javax.swing.JPanel();
+        jButton31 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField17 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jTextField18 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField22 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField24 = new javax.swing.JTextField();
+        jButton32 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        cambiarra = new javax.swing.JLabel();
 
         jPopupMenu1.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
 
@@ -181,6 +210,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jPopupMenu1.add(editar);
+
+        editarFornecedor.setText("Editar");
+        editarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarFornecedorActionPerformed(evt);
+            }
+        });
+        jPopupMenu2.add(editarFornecedor);
+
+        detalhes.setText("Detalhes");
+        detalhes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detalhesActionPerformed(evt);
+            }
+        });
+        jPopupMenu2.add(detalhes);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -386,7 +431,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton26)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(menu);
@@ -493,7 +538,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
@@ -570,7 +615,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(cadastrarCategoriaLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel10)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
@@ -752,7 +797,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastrarFornecedorLayout.setVerticalGroup(
             cadastrarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cadastrarFornecedorLayout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+                .addContainerGap(161, Short.MAX_VALUE)
                 .addGroup(cadastrarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadastrarFornecedorLayout.createSequentialGroup()
                         .addGroup(cadastrarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -828,7 +873,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable5.setToolTipText("");
+        jTable5.setToolTipText("Botão direito para mais opções");
         jTable5.setGridColor(new java.awt.Color(255, 255, 255));
         jTable5.setSelectionBackground(new java.awt.Color(114, 132, 138));
         jTable5.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -851,7 +896,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         listarFornecedorLayout.setVerticalGroup(
             listarFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
         );
 
         cards.add(listarFornecedor, "listarFornecedor");
@@ -906,7 +951,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         listarCategoriaLayout.setVerticalGroup(
             listarCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
         );
 
         cards.add(listarCategoria, "listarCategorias");
@@ -963,7 +1008,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         listarMovimentacaoLayout.setVerticalGroup(
             listarMovimentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
         );
 
         cards.add(listarMovimentacao, "listarMovimentacao");
@@ -1218,7 +1263,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(adicionarRemoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1279,10 +1324,276 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         listarProdutoLayout.setVerticalGroup(
             listarProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
         );
 
         cards.add(listarProduto, "listarProduto");
+
+        editarFornecedorP.setBackground(new java.awt.Color(42, 66, 73));
+
+        jButton31.setBackground(new java.awt.Color(38, 130, 158));
+        jButton31.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jButton31.setForeground(new java.awt.Color(255, 255, 255));
+        jButton31.setText("Editar");
+        jButton31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Nome");
+
+        jTextField17.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField17.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTextField17.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel27.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("CPNJ");
+
+        jFormattedTextField2.setBackground(new java.awt.Color(38, 130, 158));
+        jFormattedTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jFormattedTextField2.setForeground(java.awt.Color.white);
+        try {
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField2.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+
+        jFormattedTextField4.setBackground(new java.awt.Color(38, 130, 158));
+        jFormattedTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jFormattedTextField4.setForeground(java.awt.Color.white);
+        try {
+            jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel28.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Telefone");
+
+        jTextField18.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField18.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTextField18.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel29.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Email");
+
+        jLabel30.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel30.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Rua");
+
+        jTextField19.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField19.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField19.setForeground(java.awt.Color.white);
+        jTextField19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel31.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("Número");
+
+        jTextField20.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField20.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField20.setForeground(java.awt.Color.white);
+        jTextField20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel32.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Bairro");
+
+        jTextField21.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField21.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField21.setForeground(java.awt.Color.white);
+        jTextField21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel33.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel33.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Complemento");
+
+        jTextField22.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField22.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField22.setForeground(java.awt.Color.white);
+        jTextField22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel34.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Cidade");
+
+        jTextField23.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField23.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField23.setForeground(java.awt.Color.white);
+        jTextField23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jLabel35.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel35.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Estado");
+
+        jTextField24.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField24.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jTextField24.setForeground(java.awt.Color.white);
+        jTextField24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        jButton32.setBackground(new java.awt.Color(38, 130, 158));
+        jButton32.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jButton32.setForeground(new java.awt.Color(255, 255, 255));
+        jButton32.setText("Voltar");
+        jButton32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Id");
+
+        jTextField25.setEditable(false);
+        jTextField25.setBackground(new java.awt.Color(38, 130, 158));
+        jTextField25.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
+        jTextField25.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
+
+        cambiarra.setText("jLabel3");
+
+        javax.swing.GroupLayout editarFornecedorPLayout = new javax.swing.GroupLayout(editarFornecedorP);
+        editarFornecedorP.setLayout(editarFornecedorPLayout);
+        editarFornecedorPLayout.setHorizontalGroup(
+            editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel32))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(108, Short.MAX_VALUE))
+            .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarFornecedorPLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cambiarra)
+                .addGap(175, 175, 175))
+        );
+        editarFornecedorPLayout.setVerticalGroup(
+            editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarFornecedorPLayout.createSequentialGroup()
+                .addContainerGap(78, Short.MAX_VALUE)
+                .addComponent(cambiarra)
+                .addGap(64, 64, 64)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel36))
+                    .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel30)))
+                .addGap(18, 18, 18)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel31)
+                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel32)
+                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(editarFornecedorPLayout.createSequentialGroup()
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel27))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28))
+                        .addGap(18, 18, 18)
+                        .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29))))
+                .addGap(18, 18, 18)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(151, 151, 151)
+                .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
+        );
+
+        cambiarra.setVisible(false);
+
+        cards.add(editarFornecedorP, "editarFornecedor");
 
         jSplitPane1.setRightComponent(cards);
 
@@ -1562,7 +1873,84 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jTable5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MouseClicked
         // TODO add your handling code here:
+        if (evt.isPopupTrigger() || SwingUtilities.isRightMouseButton(evt)) {
+            int row = jTable5.rowAtPoint(evt.getPoint());
+            if (row >= 0 && row < jTable5.getRowCount()) {
+                jTable5.setRowSelectionInterval(row, row);
+                jPopupMenu2.show(jTable5, evt.getX(), evt.getY());
+            }
+        }
     }//GEN-LAST:event_jTable5MouseClicked
+
+    private void editarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarFornecedorActionPerformed
+        // TODO add your handling code here:
+        int linha = jTable5.getSelectedRow();
+        if (linha != -1) {
+            jTextField17.setEditable(true);
+            jFormattedTextField2.setEditable(true);
+            jFormattedTextField4.setEditable(true);
+            jTextField18.setEditable(true);
+            jTextField19.setEditable(true);
+            jTextField20.setEditable(true);
+            jTextField21.setEditable(true);
+            jTextField22.setEditable(true);
+            jTextField23.setEditable(true);
+            jTextField24.setEditable(true);
+            jButton31.setVisible(true);
+            preencherEditarFornecedor(fornecedorController.fornecedor((int) jTable5.getValueAt(linha, 0)));
+            cardLayout.show(cards, "editarFornecedor");
+        }
+    }//GEN-LAST:event_editarFornecedorActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+        preencherTabelaFornecedor();
+        cardLayout.show(cards, "listarFornecedor");
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.valueOf(jTextField25.getText());
+        String nome = jTextField17.getText();
+        String cnpj = jFormattedTextField2.getText();
+        String telefone = jFormattedTextField4.getText();
+        String email = jTextField18.getText();
+        String rua = jTextField19.getText();
+        String numero = jTextField20.getText();
+        String bairro = jTextField21.getText();
+        String complemento = jTextField22.getText();
+        String cidade = jTextField23.getText();
+        String estado = jTextField24.getText();
+
+        Fornecedor fornecedor = new Fornecedor(nome, cnpj, telefone, email, new Endereco(rua, numero, bairro, complemento, cidade, estado));
+        fornecedor.setIdFornecedor(id);
+        fornecedor.getEndereco().setId(Integer.valueOf(cambiarra.getText()));
+        if (fornecedorController.editarFornecedor(fornecedor)) {
+            JOptionPane.showMessageDialog(this, "Fornecedor editado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao editar fornecedor!");
+        }
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void detalhesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detalhesActionPerformed
+        // TODO add your handling code here:
+        int linha = jTable5.getSelectedRow();
+        if (linha != -1) {
+            jTextField17.setEditable(false);
+            jFormattedTextField2.setEditable(false);
+            jFormattedTextField4.setEditable(false);
+            jTextField18.setEditable(false);
+            jTextField19.setEditable(false);
+            jTextField20.setEditable(false);
+            jTextField21.setEditable(false);
+            jTextField22.setEditable(false);
+            jTextField23.setEditable(false);
+            jTextField24.setEditable(false);
+            jButton31.setVisible(false);
+            preencherEditarFornecedor(fornecedorController.fornecedor((int) jTable5.getValueAt(linha, 0)));
+            cardLayout.show(cards, "editarFornecedor");
+        }
+    }//GEN-LAST:event_detalhesActionPerformed
 
     private void menuVisivel(JPanel painel) {
         boolean visivel = painel.isVisible();
@@ -1639,14 +2027,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }
 
+    public void preencherEditarFornecedor(Fornecedor fornecedor) {
+        jTextField17.setText(fornecedor.getNome());
+        jFormattedTextField2.setText(fornecedor.getCnpj());
+        jFormattedTextField4.setText(fornecedor.getTelefone());
+        jTextField18.setText(fornecedor.getEmail());
+        jTextField19.setText(fornecedor.getEndereco().getRua());
+        jTextField20.setText(fornecedor.getEndereco().getNumero());
+        jTextField21.setText(fornecedor.getEndereco().getBairro());
+        jTextField22.setText(fornecedor.getEndereco().getComplemento());
+        jTextField23.setText(fornecedor.getEndereco().getCidade());
+        jTextField24.setText(fornecedor.getEndereco().getEstado());
+        jTextField25.setText(String.valueOf(fornecedor.getIdFornecedor()));
+        cambiarra.setText(String.valueOf(fornecedor.getEndereco().getId()));
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem adicionar;
     private javax.swing.JPanel adicionarRemover;
     private javax.swing.JPanel cadastrarCategoria;
     private javax.swing.JPanel cadastrarFornecedor;
     private javax.swing.JPanel cadastrarProduto;
+    private javax.swing.JLabel cambiarra;
     private javax.swing.JPanel cards;
+    private javax.swing.JMenuItem detalhes;
     private javax.swing.JMenuItem editar;
+    private javax.swing.JMenuItem editarFornecedor;
+    private javax.swing.JPanel editarFornecedorP;
     private javax.swing.JMenuItem excluir;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1662,6 +2069,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1670,7 +2079,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<Fornecedor> jComboBox3;
     private javax.swing.JComboBox<Categoria> jComboBox4;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
+    private javax.swing.JFormattedTextField jFormattedTextField4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1689,6 +2100,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -1700,6 +2122,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1723,6 +2146,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;

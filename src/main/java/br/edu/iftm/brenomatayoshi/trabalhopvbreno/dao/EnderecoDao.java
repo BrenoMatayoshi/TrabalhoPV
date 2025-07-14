@@ -48,4 +48,21 @@ public class EnderecoDao {
             return false;
         }
     }
+
+    public int editarEndereco(Endereco endereco) {
+        String sql = "UPDATE endereco SET rua = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ? WHERE id_endereco = ?";
+        try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, endereco.getRua());
+            stmt.setString(2, endereco.getNumero());
+            stmt.setString(3, endereco.getBairro());
+            stmt.setString(4, endereco.getComplemento());
+            stmt.setString(5, endereco.getCidade());
+            stmt.setString(6, endereco.getEstado());
+            stmt.setInt(7, endereco.getId());
+            return stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
 }

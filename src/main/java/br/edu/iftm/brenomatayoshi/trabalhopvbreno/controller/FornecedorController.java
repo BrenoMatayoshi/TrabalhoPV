@@ -22,4 +22,12 @@ public class FornecedorController {
     public List<Fornecedor> fornecedores() {
         return fornecedorDao.fornecedores();
     }
+
+    public boolean editarFornecedor(Fornecedor fornecedor) {
+        return fornecedorDao.editarFornecedor(fornecedor);
+    }
+
+    public Fornecedor fornecedor(int idFornecedor) {
+        return fornecedorDao.fornecedor(idFornecedor);
+    }
 }

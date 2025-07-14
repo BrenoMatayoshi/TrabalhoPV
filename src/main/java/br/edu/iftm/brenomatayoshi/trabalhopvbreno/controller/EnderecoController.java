@@ -13,4 +13,8 @@ public class EnderecoController {
     public boolean excluirEndereco(int idEndereco) {
         return enderecoDao.excluirEndereco(idEndereco);
     }
+
+    public int editarEndereco(Endereco endereco) {
+        return enderecoDao.editarEndereco(endereco);
+    }
 }
