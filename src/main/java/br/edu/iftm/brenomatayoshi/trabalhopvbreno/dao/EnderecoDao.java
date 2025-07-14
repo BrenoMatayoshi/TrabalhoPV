@@ -59,7 +59,7 @@ public class EnderecoDao {
             stmt.setString(5, endereco.getCidade());
             stmt.setString(6, endereco.getEstado());
             stmt.setInt(7, endereco.getId());
-            return stmt.executeUpdate();
+            return endereco.getId();
         } catch (SQLException e) {
             e.printStackTrace();
             return -1;

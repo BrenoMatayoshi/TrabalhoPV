@@ -175,7 +175,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton32 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jTextField25 = new javax.swing.JTextField();
-        cambiarra = new javax.swing.JLabel();
+        gambiarra = new javax.swing.JLabel();
 
         jPopupMenu1.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
 
@@ -1468,7 +1468,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextField25.setForeground(new java.awt.Color(255, 255, 255));
         jTextField25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 44, 38), 2));
 
-        cambiarra.setText("jLabel3");
+        gambiarra.setText("jLabel3");
 
         javax.swing.GroupLayout editarFornecedorPLayout = new javax.swing.GroupLayout(editarFornecedorP);
         editarFornecedorP.setLayout(editarFornecedorPLayout);
@@ -1530,14 +1530,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(86, 86, 86))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarFornecedorPLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cambiarra)
+                .addComponent(gambiarra)
                 .addGap(175, 175, 175))
         );
         editarFornecedorPLayout.setVerticalGroup(
             editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarFornecedorPLayout.createSequentialGroup()
                 .addContainerGap(78, Short.MAX_VALUE)
-                .addComponent(cambiarra)
+                .addComponent(gambiarra)
                 .addGap(64, 64, 64)
                 .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editarFornecedorPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1591,7 +1591,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(60, 60, 60))
         );
 
-        cambiarra.setVisible(false);
+        gambiarra.setVisible(false);
 
         cards.add(editarFornecedorP, "editarFornecedor");
 
@@ -1616,7 +1616,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String nome = jTextField1.getText();
         String descricao = jTextArea1.getText();
         Categoria categoria = (Categoria) jComboBox1.getSelectedItem();
-
+        if ((nome.trim() == null || nome.trim().equals("")) || (descricao.trim() == null || descricao.trim().equals(""))) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos");
+            return;
+        }
         produtoController.cadastrarProduto(new Produto(categoria, nome, descricao, 0, LocalDate.now(), true));
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1686,6 +1689,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String nome = jTextField3.getText();
         String descricao = jTextArea3.getText();
 
+        if (nome == null || nome.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Nome é obrigatório");
+            return;
+        }
+
+        if (descricao == null || descricao.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Descrição é obrigatório");
+            return;
+        }
+
         if (categoriaController.cadastrarCategoria(new Categoria(nome, descricao))) {
             JOptionPane.showMessageDialog(this, "Cadastro da categoria: " + nome + " bem sucedido.");
             return;
@@ -1705,6 +1718,51 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String complemento = jTextField9.getText();
         String cidade = jTextField10.getText();
         String estado = jTextField11.getText();
+
+        if (nome == null || nome.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Nome é obrigatório");
+            return;
+        }
+
+        if (cnpj == null || cnpj.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "CNPJ é obrigatório");
+            return;
+        }
+
+        if (telefone == null || telefone.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Telefone é obrigatório");
+            return;
+        }
+
+        if (email == null || email.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Email é obrigatório");
+            return;
+        }
+
+        if (rua == null || rua.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Rua é obrigatória");
+            return;
+        }
+
+        if (numero == null || numero.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Número é obrigatório");
+            return;
+        }
+
+        if (bairro == null || bairro.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bairro é obrigatório");
+            return;
+        }
+
+        if (cidade == null || cidade.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Cidade é obrigatória");
+            return;
+        }
+
+        if (estado == null || estado.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Estado é obrigatório");
+            return;
+        }
 
         if (fornecedorController.cadastrarFornecedor(new Fornecedor(nome, cnpj, telefone, email, new Endereco(rua, numero, bairro, complemento, cidade, estado)))) {
             JOptionPane.showMessageDialog(this, "Cadastro do Fornecedor: " + nome + " bem sucedido.");
@@ -1745,6 +1803,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Categoria categoria = (Categoria) jComboBox4.getSelectedItem();
         if (jPanel1.isVisible()) {
             Fornecedor fornecedor = (Fornecedor) jComboBox3.getSelectedItem();
+            if (jTextField14.getText().trim() == null || jTextField14.getText().trim().equals("")) {
+                JOptionPane.showMessageDialog(this, "Quantidade inválida");
+                return;
+            }
             int quantidadeAdicionarRemover = Integer.valueOf(jTextField14.getText());
             switch (jLabel23.getText()) {
                 case "Adicionar":
@@ -1922,9 +1984,54 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String cidade = jTextField23.getText();
         String estado = jTextField24.getText();
 
+        if (nome == null || nome.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Nome é obrigatório");
+            return;
+        }
+
+        if (cnpj == null || cnpj.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "CNPJ é obrigatório");
+            return;
+        }
+
+        if (telefone == null || telefone.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Telefone é obrigatório");
+            return;
+        }
+
+        if (email == null || email.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Email é obrigatório");
+            return;
+        }
+
+        if (rua == null || rua.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Rua é obrigatória");
+            return;
+        }
+
+        if (numero == null || numero.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Número é obrigatório");
+            return;
+        }
+
+        if (bairro == null || bairro.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bairro é obrigatório");
+            return;
+        }
+
+        if (cidade == null || cidade.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Cidade é obrigatória");
+            return;
+        }
+
+        if (estado == null || estado.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Estado é obrigatório");
+            return;
+        }
+
         Fornecedor fornecedor = new Fornecedor(nome, cnpj, telefone, email, new Endereco(rua, numero, bairro, complemento, cidade, estado));
         fornecedor.setIdFornecedor(id);
-        fornecedor.getEndereco().setId(Integer.valueOf(cambiarra.getText()));
+        fornecedor.getEndereco().setId(Integer.valueOf(gambiarra.getText()));
         if (fornecedorController.editarFornecedor(fornecedor)) {
             JOptionPane.showMessageDialog(this, "Fornecedor editado com sucesso!");
         } else {
@@ -2039,7 +2146,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextField23.setText(fornecedor.getEndereco().getCidade());
         jTextField24.setText(fornecedor.getEndereco().getEstado());
         jTextField25.setText(String.valueOf(fornecedor.getIdFornecedor()));
-        cambiarra.setText(String.valueOf(fornecedor.getEndereco().getId()));
+        gambiarra.setText(String.valueOf(fornecedor.getEndereco().getId()));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2048,13 +2155,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel cadastrarCategoria;
     private javax.swing.JPanel cadastrarFornecedor;
     private javax.swing.JPanel cadastrarProduto;
-    private javax.swing.JLabel cambiarra;
     private javax.swing.JPanel cards;
     private javax.swing.JMenuItem detalhes;
     private javax.swing.JMenuItem editar;
     private javax.swing.JMenuItem editarFornecedor;
     private javax.swing.JPanel editarFornecedorP;
     private javax.swing.JMenuItem excluir;
+    private javax.swing.JLabel gambiarra;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

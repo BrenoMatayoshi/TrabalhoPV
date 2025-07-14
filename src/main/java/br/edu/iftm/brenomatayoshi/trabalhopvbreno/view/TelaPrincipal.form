@@ -2426,7 +2426,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="cambiarra" min="-2" max="-2" attributes="0"/>
+                          <Component id="gambiarra" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2435,7 +2435,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="78" max="32767" attributes="0"/>
-                          <Component id="cambiarra" min="-2" max="-2" attributes="0"/>
+                          <Component id="gambiarra" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -2919,12 +2919,12 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="cambiarra">
+                <Component class="javax.swing.JLabel" name="gambiarra">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jLabel3"/>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cambiarra.setVisible(false);"/>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="gambiarra.setVisible(false);"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
