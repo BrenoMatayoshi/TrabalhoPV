@@ -42,7 +42,7 @@ public class UsuarioDao {
     }
     
     public Usuario logar(String login, String senha) {
-        String sql = "select u.id_usuario, u.nome, u.identificacao, u.telefone, u.email, u.senha, e.id_endereco, e.rua, e.numero, e.bairro, e.complemento, e.cidade, e.estado from usuario u left join endereco e on e.id_endereco = u.id_usuario where (u.identificacao = ? or u.email = ?) and u.senha = ?;";
+        String sql = "select u.id_usuario, u.nome, u.identificacao, u.telefone, u.email, u.senha, e.id_endereco, e.endereco, e.cidade, e.estado from usuario u left join endereco e on e.id_endereco = u.id_usuario where (u.identificacao = ? or u.email = ?) and u.senha = ?;";
         Usuario usuario = null;
         try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, login);
@@ -57,13 +57,10 @@ public class UsuarioDao {
                 String email = rs.getString("email");
                 String senhaBanco = rs.getString("senha");
                 int idEndereco = rs.getInt("id_endereco");
-                String rua = rs.getString("rua");
-                String numero = rs.getString("numero");
-                String bairro = rs.getString("bairro");
-                String complemento = rs.getString("complemento");
+                String endereco = rs.getString("endereco");
                 String cidade = rs.getString("cidade");
                 String estado = rs.getString("estado");
-                usuario = new Usuario(nome, identificacao, telefone, email, senhaBanco, new Endereco(rua, numero, bairro, complemento, cidade, estado));
+                usuario = new Usuario(nome, identificacao, telefone, email, senhaBanco, new Endereco(endereco, cidade, estado));
                 usuario.setId(id);
                 usuario.getEndereco().setId(idEndereco);
                 return usuario;

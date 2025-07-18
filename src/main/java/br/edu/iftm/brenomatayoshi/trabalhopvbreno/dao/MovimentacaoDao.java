@@ -73,8 +73,7 @@ public class MovimentacaoDao {
 
     private int inserirFornecedorHasProduto(int idFornecedor, int idProduto) {
         String sql = "INSERT INTO fornecedor_has_produto (id_fornecedor, id_produto) VALUES (?, ?)";
-        try (Connection conn = ConexaoDao.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setInt(1, idFornecedor);
             stmt.setInt(2, idProduto);
             stmt.executeUpdate();
@@ -152,24 +151,93 @@ public class MovimentacaoDao {
     }
 
     public List<Movimentacao> movimentacoes() {
-        String sql = "select m.id_movimentacao, m.quantidade_movimentado, m.data, m.tipo, u.id_usuario, u.nome as nome_usuario, u.identificacao, u.telefone as telefone_usuario, u.email as email_usuario, u.senha, e1.id_endereco as id_endereco_1, e1.rua as rua_1, e1.numero as numero_1, e1.bairro as bairro_1, e1.complemento as complemento_1, e1.cidade as cidade_1, e1.estado as estado_1, p.id_produto, p.nome as nome_produto, p.descricao as descricao_produto, p.quantidade_estoque, p.data_cadastro, p.ativo, c.id_categoria, c.nome as nome_categoria, c.descricao as descricao_categoria, f.id_fornecedor, f.nome as nome_fornecedor, f.cnpj, f.telefone as telefone_fornecedor, f.email as email_fornecedor, e2.id_endereco as id_endereco_2, e2.rua as rua_2, e2.numero as numero_2, e2.bairro as bairro_2, e2.complemento as complemento_2, e2.cidade as cidade_2, e2.estado as estado_2 from movimentacao m left join usuario u on u.id_usuario = m.id_usuario left join endereco e1 on e1.id_endereco = u.id_endereco left join fornecedor_has_produto fp on fp.id_fornecedor_has_produto = m.id_fornecedor_has_produto left join produto p on p.id_produto = fp.id_produto left join categoria c on c.id_categoria = p.id_categoria left join fornecedor f on f.id_fornecedor = fp.id_fornecedor  left join endereco e2 on e2.id_endereco = f.id_endereco;";
-        
+        String sql = "select m.id_movimentacao, m.quantidade_movimentado, m.data, m.tipo, "
+                + "u.id_usuario, u.nome as nome_usuario, u.identificacao, u.telefone as telefone_usuario, u.email as email_usuario, u.senha, "
+                + "e1.id_endereco as id_endereco_1, e1.rua as endereco_1, e1.cidade as cidade_1, e1.estado as estado_1, "
+                + "p.id_produto, p.nome as nome_produto, p.descricao as descricao_produto, p.quantidade_estoque, p.data_cadastro, p.ativo, "
+                + "c.id_categoria, c.nome as nome_categoria, c.descricao as descricao_categoria, "
+                + "f.id_fornecedor, f.nome as nome_fornecedor, f.cnpj, f.telefone as telefone_fornecedor, f.email as email_fornecedor, "
+                + "e2.id_endereco as id_endereco_2, e2.rua as endereco_2, e2.cidade as cidade_2, e2.estado as estado_2 "
+                + "from movimentacao m "
+                + "left join usuario u on u.id_usuario = m.id_usuario "
+                + "left join endereco e1 on e1.id_endereco = u.id_endereco "
+                + "left join fornecedor_has_produto fp on fp.id_fornecedor_has_produto = m.id_fornecedor_has_produto "
+                + "left join produto p on p.id_produto = fp.id_produto "
+                + "left join categoria c on c.id_categoria = p.id_categoria "
+                + "left join fornecedor f on f.id_fornecedor = fp.id_fornecedor "
+                + "left join endereco e2 on e2.id_endereco = f.id_endereco";
+
         try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
+
             List<Movimentacao> movimentacoes = new ArrayList<>();
+
             while (rs.next()) {
-                Movimentacao movimentacao = new Movimentacao(new Usuario(rs.getString("identificacao"), rs.getString("senha"), rs.getString("nome_usuario"), rs.getString("telefone_usuario"), rs.getString("email_usuario"), new Endereco(rs.getString("rua_1"), rs.getString("numero_1"), rs.getString("bairro_1"), rs.getString("complemento_1"), rs.getString("cidade_1"), rs.getString("estado_1"))), rs.getInt("quantidade_movimentado"), rs.getDate("data").toLocalDate(), rs.getString("tipo"), new Produto(new Categoria(rs.getString("nome_categoria"), rs.getString("descricao_categoria")), rs.getString("nome_produto"), rs.getString("descricao_produto"), rs.getInt("quantidade_estoque"), rs.getDate("data_cadastro").toLocalDate(), rs.getBoolean("ativo")), new Fornecedor(rs.getString("nome_fornecedor"), rs.getString("cnpj"), rs.getString("telefone_fornecedor"), rs.getString("email_fornecedor"), new Endereco(rs.getString("rua_2"), rs.getString("numero_2"), rs.getString("bairro_2"), rs.getString("complemento_2"), rs.getString("cidade_2"), rs.getString("estado_2"))));
+                Endereco enderecoUsuario = new Endereco(
+                        rs.getString("endereco_1"),
+                        rs.getString("cidade_1"),
+                        rs.getString("estado_1")
+                );
+                enderecoUsuario.setId(rs.getInt("id_endereco_1"));
+
+                Usuario usuario = new Usuario(
+                        rs.getString("identificacao"),
+                        rs.getString("senha"),
+                        rs.getString("nome_usuario"),
+                        rs.getString("telefone_usuario"),
+                        rs.getString("email_usuario"),
+                        enderecoUsuario
+                );
+                usuario.setId(rs.getInt("id_usuario"));
+
+                Categoria categoria = new Categoria(
+                        rs.getString("nome_categoria"),
+                        rs.getString("descricao_categoria")
+                );
+
+                Produto produto = new Produto(
+                        categoria,
+                        rs.getString("nome_produto"),
+                        rs.getString("descricao_produto"),
+                        rs.getInt("quantidade_estoque"),
+                        rs.getDate("data_cadastro").toLocalDate(),
+                        rs.getBoolean("ativo")
+                );
+                produto.setIdProduto(rs.getInt("id_produto"));
+
+                Endereco enderecoFornecedor = new Endereco(
+                        rs.getString("endereco_2"),
+                        rs.getString("cidade_2"),
+                        rs.getString("estado_2")
+                );
+                enderecoFornecedor.setId(rs.getInt("id_endereco_2"));
+
+                Fornecedor fornecedor = new Fornecedor(
+                        rs.getString("nome_fornecedor"),
+                        rs.getString("cnpj"),
+                        rs.getString("telefone_fornecedor"),
+                        rs.getString("email_fornecedor"),
+                        enderecoFornecedor
+                );
+                fornecedor.setIdFornecedor(rs.getInt("id_fornecedor"));
+
+                Movimentacao movimentacao = new Movimentacao(
+                        usuario,
+                        rs.getInt("quantidade_movimentado"),
+                        rs.getDate("data").toLocalDate(),
+                        rs.getString("tipo"),
+                        produto,
+                        fornecedor
+                );
                 movimentacao.setIdMovimentacao(rs.getInt("id_movimentacao"));
-                movimentacao.getUsuario().setId(rs.getInt("id_usuario"));
-                movimentacao.getUsuario().getEndereco().setId(rs.getInt("id_endereco_1"));
-                movimentacao.getProduto().setIdProduto(rs.getInt("id_produto"));
-                movimentacao.getFornecedor().setIdFornecedor(rs.getInt("id_fornecedor"));
-                movimentacao.getFornecedor().getEndereco().setId(rs.getInt("id_endereco_2"));
+
                 movimentacoes.add(movimentacao);
             }
+
             return movimentacoes;
         } catch (SQLException e) {
             e.printStackTrace();
             return new ArrayList<>();
         }
     }
+
 }

@@ -18,14 +18,11 @@ import java.sql.Statement;
 public class EnderecoDao {
 
     public int cadastrarEndereco(Endereco endereco) {
-        String sql = "insert into endereco (rua, numero, bairro, complemento, cidade, estado) VALUES (?, ?, ?, ?, ?, ?);";
+        String sql = "insert into endereco (endereco, cidade, estado) VALUES (?, ?, ?);";
         try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, endereco.getRua());
-            stmt.setString(2, endereco.getNumero());
-            stmt.setString(3, endereco.getBairro());
-            stmt.setString(4, endereco.getComplemento());
-            stmt.setString(5, endereco.getCidade());
-            stmt.setString(6, endereco.getEstado());
+            stmt.setString(1, endereco.getEndereco());
+            stmt.setString(2, endereco.getCidade());
+            stmt.setString(3, endereco.getEstado());
             stmt.executeUpdate();
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
@@ -50,15 +47,12 @@ public class EnderecoDao {
     }
 
     public int editarEndereco(Endereco endereco) {
-        String sql = "UPDATE endereco SET rua = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ? WHERE id_endereco = ?";
+        String sql = "UPDATE endereco SET endereco = ?, cidade = ?, estado = ? WHERE id_endereco = ?";
         try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, endereco.getRua());
-            stmt.setString(2, endereco.getNumero());
-            stmt.setString(3, endereco.getBairro());
-            stmt.setString(4, endereco.getComplemento());
-            stmt.setString(5, endereco.getCidade());
-            stmt.setString(6, endereco.getEstado());
-            stmt.setInt(7, endereco.getId());
+            stmt.setString(1, endereco.getEndereco());
+            stmt.setString(2, endereco.getCidade());
+            stmt.setString(3, endereco.getEstado());
+            stmt.setInt(4, endereco.getId());
             return endereco.getId();
         } catch (SQLException e) {
             e.printStackTrace();

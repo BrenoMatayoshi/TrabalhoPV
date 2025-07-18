@@ -47,7 +47,7 @@ public class FornecedorDao {
         try (Connection conn = ConexaoDao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
             List<Fornecedor> fornecedores = new ArrayList<>();
             while (rs.next()) {
-                Fornecedor fornecedor = new Fornecedor(rs.getString("nome"), rs.getString("cnpj"), rs.getString("telefone"), rs.getString("email"), new Endereco(rs.getString("rua"), rs.getString("numero"), rs.getString("bairro"), rs.getString("complemento"), rs.getString("cidade"), rs.getString("estado")));
+                Fornecedor fornecedor = new Fornecedor(rs.getString("nome"), rs.getString("cnpj"), rs.getString("telefone"), rs.getString("email"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado")));
                 fornecedor.setIdFornecedor(rs.getInt("id_fornecedor"));
                 fornecedor.getEndereco().setId(rs.getInt("id_endereco"));
                 fornecedores.add(fornecedor);
@@ -86,7 +86,7 @@ public class FornecedorDao {
             stmt.setInt(1, idFornecedor);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    Fornecedor fornecedor = new Fornecedor(rs.getString("nome"), rs.getString("cnpj"), rs.getString("telefone"), rs.getString("email"), new Endereco(rs.getString("rua"), rs.getString("numero"), rs.getString("bairro"), rs.getString("complemento"), rs.getString("cidade"), rs.getString("estado")));
+                    Fornecedor fornecedor = new Fornecedor(rs.getString("nome"), rs.getString("cnpj"), rs.getString("telefone"), rs.getString("email"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado")));
                     fornecedor.setIdFornecedor(rs.getInt("id_fornecedor"));
                     fornecedor.getEndereco().setId(rs.getInt("id_endereco"));
                     return fornecedor;
